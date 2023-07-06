@@ -51,7 +51,7 @@
     <p id="halo" class="halo"></p>
 
     <div>
-      <blockquote id='bq' data-text='ᵉˡˢᵉᵍᵃʷᵒⁿ'>
+      <blockquote id='bq' data-text='ᶠʳᵒᵐ ᴱˡˢᵉᵍᵃʷᵒⁿ'>
         <p id="kalimat">Aku Ada Sesuatu Nih 🎉</p>
 
         <p id="pesan1">Klik 4 Kue di Bawah! 😆🎉</p>
@@ -140,8 +140,13 @@
       var {
         value: nama
       } = await swals.fire({
-        title: 'Masukin Nama Kamu',
+        title: 'Apakah Benar ini nama Kamu?',
         input: 'text',
+        inputValue: 'Nay',
+        inputAttributes: {
+          disabled: 'disabled',
+        },
+        confirmButtonText: 'Nggeh!',
       });
       if (nama && nama.length < 11) {
         window.nama = nama;
@@ -159,9 +164,9 @@
     var tomnegatif = 'Engga';
 
     async function menuju() {
-      pesanwhatsapp = "Makasii udah ngucapin " + nama + " ultah ><";
+      pesanwa = "Makasii udah ngucapin " + nama + " ultah ><";
       await swals.fire('OK!', 'Kirim jawabannya ke WhatsApp aku, ya!', 'success');
-      window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;
+      window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwa;
     }
   </script>
   <script src="script.js"></script>
